@@ -1,8 +1,10 @@
 package com.educandoweb.curso.entities;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
-public class User implements Serializable  {
+
+public class User implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private Long id;
@@ -10,10 +12,11 @@ public class User implements Serializable  {
     private String email;
     private String password;
 
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
+    public User() {
+
+    }
+
+    public User(long l, String name, String mail, String number) {
     }
 
     public Long getId() {
@@ -57,8 +60,6 @@ public class User implements Serializable  {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hash(id, name, email, password);
     }
 }
-
-
